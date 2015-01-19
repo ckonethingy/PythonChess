@@ -1,5 +1,5 @@
 import sys
-
+import re
 
 chessboard = (
     '         \n'  #   0 -  9
@@ -30,6 +30,16 @@ def main():
         moveRequest = raw_input("Next Move: ")
     
     print "Game Quitted"
+
+def parseRequest(request):
+    # get the piece in request
+    if !re.match(r"^[KRQBN]?[a-h][1-8]"):
+        print "Get more legit pleb."
+        return
+
+    loc = request[-2:]
+    piece = request[0] if len(request) == 3 else "P"
+
 
 if __name__ == "__main__":
     main()
