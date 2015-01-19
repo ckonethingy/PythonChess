@@ -53,8 +53,8 @@ class gameState:
         print "White: " + str(self.whitePts)
         print "Black: " + str(self.blackPts)
 
-    def nextTurn(self, peice, start, end):
-        print peice
+    def nextTurn(self, piece, start, end):
+        print piece
         print start
         print end
         self.turn = (self.turn+1)%2
@@ -70,7 +70,7 @@ def nextMove( gameState, request ):
     #TODO!: josh your parse goes here
     #move = parse(request)
 
-    gameState.nextTurn(move.peice, move.startPos, move.endPos)
+    gameState.nextTurn(move.piece, move.startPos, move.endPos)
 
 def main():
     Game = gameState(chessboard)
