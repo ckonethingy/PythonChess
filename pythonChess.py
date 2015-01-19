@@ -18,13 +18,18 @@ chessboard = (
 #thanks thomasahle/sunfish/blob/master/sunfish.py
 
 def printGameState():
-	print chessboard
-
-printGameState()
+    print "Current game state"
+    print chessboard
 
 def main():
-    # do some cool shit
-
+    printGameState()
+    moveRequest = raw_input("Next Move: ")
+    while moveRequest != "q":
+        print "Your move was " + moveRequest
+        printGameState()
+        moveRequest = raw_input("Next Move: ")
+    
+    print "Game Quitted"
 
 if __name__ == "__main__":
     main()
