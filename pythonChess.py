@@ -21,3 +21,10 @@ def printGameState():
 	print chessboard
 
 printGameState()
+
+def main():
+    # do some cool shit
+
+
+if __name__ == "__main__":
+    main()
