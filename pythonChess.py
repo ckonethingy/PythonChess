@@ -1,8 +1,7 @@
 import sys
 import re
+import collections
 
-WHITE = 0
-BLACK = 1
 chessboard = (
     '         \n'  #   0 -  9
     '         \n'  #  10 - 19
@@ -54,8 +53,10 @@ class gameState:
         print "White: " + str(self.whitePts)
         print "Black: " + str(self.blackPts)
 
-
-    def nextTurn(self, nextMove):
+    def nextTurn(self, peice, start, end):
+        print peice
+        print start
+        print end
         self.turn = (self.turn+1)%2
         self.moves += 1
 
@@ -65,8 +66,11 @@ def printGameState( gameState ):
     gameState.show()
 
 #gives the move to the gameState
-def nextMove( gameState, move ):
-    gameState.nextTurn(move)
+def nextMove( gameState, request ):
+    #TODO!: josh your parse goes here
+    #move = parse(request)
+
+    gameState.nextTurn(move.peice, move.startPos, move.endPos)
 
 def main():
     Game = gameState(chessboard)
@@ -81,7 +85,7 @@ def main():
 
 def parseRequest(request):
     # get the piece in request
-    if !re.match(r"^[KRQBN]?[a-h][1-8]"):
+    if not re.match(r"^[KRQBN]?[a-h][1-8]"):
         print "Get more legit pleb."
         return
 
