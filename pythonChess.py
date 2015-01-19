@@ -80,14 +80,19 @@ def main():
     print "Game Quitted"
 
 def parseRequest(request):
+"""Determine if a move is allowed and disambiguate requests. 
+Returns a tuple with info on blah and blah"""
     # get the piece in request
-    if !re.match(r"^[KRQBN]?[a-h][1-8]"):
+    if !re.match(r"^[KRQBN]?[a-h][1-8]$"):
         print "Get more legit pleb."
         return
-
-    loc = request[-2:]
+    endPos = request[-2:]
     piece = request[0] if len(request) == 3 else "P"
+    Move = collections.namedtuple('Move', 'piece, startPos, endPos')
 
+    # generate all possible moves for one start pos. move is illegal if
+    # end pos is not in these. do the same for next start pos if it exists.
+    # otherwise illegal
 
 if __name__ == "__main__":
     main()
